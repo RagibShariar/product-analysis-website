@@ -1,0 +1,14 @@
+.wrapper{
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+.wrapper h1{
+    text-align: center;
+    font-size: 200px;
+}
+.bg-red{
+    background-color: #FFCDD2;
+}
+.text-red {
+    color: #E57373;
+}
