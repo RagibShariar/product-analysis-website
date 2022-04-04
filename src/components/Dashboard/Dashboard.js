@@ -27,8 +27,8 @@ const Dashboard = () => {
       <div className='chart'>
           <h5 className='text-center text-danger mb-5 mt-5 '>MONTH WISE SELL</h5>
       <LineChart
-        width={600}
-        height={400}
+        width={550}
+        height={350}
         data={myChart}
         margin={{ top: 0, right: 100, left: 0, bottom: 10 }}
       >
@@ -45,8 +45,8 @@ const Dashboard = () => {
     <div className='chart'>
     <h5 className='text-center text-danger mb-4 mt-5'>Investment VS Revenue</h5>
     <AreaChart
-        width={700}
-        height={400}
+        width={650}
+        height={350}
         data={myChart}
         margin={{ top: 50, right: 100, left: 100, bottom: 10 }}
       >
