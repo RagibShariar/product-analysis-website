@@ -10,6 +10,7 @@ import {
   AreaChart,
   Area,
 } from 'recharts';
+import './Dashboard.css'
 
 const Dashboard = () => {
   const [myChart, setMyChart] = useState([]);
@@ -22,23 +23,28 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
+    <div className='chart-wrapper container'>
+      <div className='chart'>
+          <h5 className='text-center text-danger mb-5 mt-5 '>MONTH WISE SELL</h5>
       <LineChart
         width={600}
         height={400}
         data={myChart}
-        margin={{ top: 50, right: 100, left: 100, bottom: 10 }}
+        margin={{ top: 0, right: 100, left: 0, bottom: 10 }}
       >
         {/* <CartesianGrid stroke="#ccc" /> */}
         <XAxis dataKey="month" />
-        <YAxis dataKey="sell" />
+        <YAxis  />
+        {/* <YAxis dataKey="sell" /> */}
         <Tooltip />
         <Legend />
         <Line type="monotone" dataKey="sell" stroke="#8884d8" />
       </LineChart>
+      </div>
 
-
-      <AreaChart
+    <div className='chart'>
+    <h5 className='text-center text-danger mb-4 mt-5'>Investment VS Revenue</h5>
+    <AreaChart
         width={700}
         height={400}
         data={myChart}
@@ -73,6 +79,8 @@ const Dashboard = () => {
           fill="url(#colorPv)"
         />
       </AreaChart>
+    </div>
+      
     </div>
   );
 };

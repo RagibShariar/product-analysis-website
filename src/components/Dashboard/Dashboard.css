@@ -1,3 +1,4 @@
-.line-chart{
-    border: 1px solid;
+
+.chart-wrapper{
+    display: flex;
 }
