@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import useReviews from '../../hooks/useReviews';
+import Home from '../Home/Home';
 import './Reviews.css';
 
 const Reviews = () => {
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useReviews();
+  // const [reviews, setReviews] = useState([]);
 
-  // load json data
-  useEffect(() => {
-    fetch('reviews.json')
-      .then((res) => res.json())
-      .then((data) => setReviews(data));
-  }, []);
+  // // load json data
+  // useEffect(() => {
+  //   fetch('reviews.json')
+  //     .then((res) => res.json())
+  //     .then((data) => setReviews(data));
+  // }, []);
 
   return (
     <div className="container">
