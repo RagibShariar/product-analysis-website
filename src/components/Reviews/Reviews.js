@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import Rating from 'react-rating';
 import useReviews from '../../hooks/useReviews';
 import Home from '../Home/Home';
 import './Reviews.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const Reviews = () => {
   const [reviews, setReviews] = useReviews();
@@ -29,8 +32,16 @@ const Reviews = () => {
                   />
                   <h5 className="">{review.name}</h5>
                 </div>
+                <p className='rating'>
+                <Rating className='me-2'
+                  initialRating={review.rating}
+                  emptySymbol={<FontAwesomeIcon icon={faStar} />}
+                  fullSymbol={<FontAwesomeIcon style={{color: 'goldenrod'}} icon={faStar} />}
+                  readonly
+                ></Rating>({review.rating})
+                </p>
                 <p>{review.review}</p>
-                <p className='rating'>Ratings: {review.rating}</p>
+                
               </div>
             </div>
           ))}
